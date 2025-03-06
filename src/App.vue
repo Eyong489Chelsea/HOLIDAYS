@@ -1,8 +1,10 @@
 <template>
-  <LeaveRequest />
+  <div >
+    <RouterView/>
+  </div>
+  
 </template>
 
 <script setup lang="ts">
-import LeaveRequest from "./views/LeaveRequest.vue"
-
+import { RouterView } from "vue-router";
 </script>

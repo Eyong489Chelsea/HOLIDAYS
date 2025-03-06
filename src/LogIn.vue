@@ -1,5 +1,8 @@
-<template>
-   <section class="border p-4 w-[600px]  bg-white rounded-lg">
+    <template>
+    <section class="flex items-center justify-center min-h-screen bg-gray-300">
+        <img  src="/home/chelsea/Downloads/5805581 1.png"/>
+
+        <section class="border p-6 w-[600px] bg-white rounded-lg">
     <h1 class="text-black fond-weigh text-[22px] text-center pb-5">Welcome to the Holiday Site</h1>
     <form @submit.prevent="handleSubmit" class="mt-6 flex flex-col items-center gap-y-4">
                   
@@ -26,6 +29,8 @@
   
    </section>
     
+    </section>
+    
 </template> 
     <script setup lang="ts">
         import { ref } from 'vue'
@@ -36,11 +41,11 @@
           const password=ref('');
           const router = useRouter();
           const isShow=ref(false);
-          const handleSubmit = ()=>{
+          const handleSubmit = async()=>{
                     if (email.value && password.value) {
                         console.log("Email:", email.value);
                         console.log("Password:", password.value);
-                        alert("Login successful (placeholder message)");
+                        await router.push("/dashboard");
                     } else {
                         alert("Please enter email and password");
                     }
